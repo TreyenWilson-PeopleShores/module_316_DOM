@@ -12,25 +12,51 @@ function displayResult(label, value) {
 
 // 1. Use a for loop to log all product names to the console
 // Your code here:
-
+productNames = document.querySelectorAll(".product");
+for (let i = 0;i<productNames.length; i++){
+    console.log(productNames[i].querySelector("h3").innerHTML)
+   // console.log(products[i]);
+}
 
 // 2. Use a for...of loop to add the class "processed" to each product
 // Your code here:
-
-
+for (let product of productNames){
+    product.classList.add("processed");
+    console.log(product)
+}
 // 3. Use forEach to log each task's text content
 // Your code here:
-
+tasks = document.querySelectorAll(".task")
+tasks.forEach(element => {
+    console.log(element.textContent);
+});
 
 
 // ===== Part 2: forEach with Index =====
 
 // 4. Use forEach to number each nav link (add "1. ", "2. ", etc. before the text)
 // Your code here:
+let links = document.querySelectorAll(".nav-link")
+let storageNum = 0;
+links.forEach(element => {
+    for(let i = 0; i<links.length; i++){
+        if(i===1){
+            storageNum++;
+            break;
+        }
+        console.log(element.prepend(storageNum));
+    }
 
+    
+    console.log(element);
+});
 
 // 5. Add a data-index attribute to each task showing its position
 // Your code here:
+for ([index, task] of tasks.entries()){
+    console.log(task);
+    task.setAttribute("data-index", index);
+}
 
 
 
@@ -39,6 +65,10 @@ function displayResult(label, value) {
 // 6. Get all products, convert to array, and use map() to get an array of prices
 // Display the result using displayResult()
 // Your code here:
+let productArray = [];
+for (product of productNames){
+    console.log("Here:", product);
+}
 
 
 // 7. Use filter() to get only products that are on sale
