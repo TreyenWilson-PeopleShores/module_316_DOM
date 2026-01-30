@@ -5,7 +5,7 @@
 
 // 1. Log the entire document object to the console
 // Your code here:
-
+console.log(document);
 
 // 2. Log the page title to the console
 // Your code here:
