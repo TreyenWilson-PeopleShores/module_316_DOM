@@ -146,7 +146,8 @@ previewInput.addEventListener("input", function(event) {
             console.log(content)
         }
     })
-    document.querySelector("#live-preview").innerHTML = content;
+    document.querySelector("#live-preview").textContent = content
+    document.querySelector("#live-preview").innerHTML += "<br></br>";
    
 });
  
