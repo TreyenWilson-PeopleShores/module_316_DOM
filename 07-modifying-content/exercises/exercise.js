@@ -5,11 +5,20 @@
 
 // 1. When "Change Text" is clicked, change #text-target's text to "The text has been changed!"
 // Your code here:
+let changeButton = document.getElementById("change-text-btn")
+changeButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    document.querySelector("#text-target").textContent = "The text has been changed!";
+});
 
 
 // 2. When "Clear Text" is clicked, clear all text from #text-target
 // Your code here:
-
+let clearButton = document.getElementById("clear-text-btn")
+clearButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    document.querySelector("#text-target").textContent = "";
+});
 
 
 // ===== Part 2: Understanding Differences =====
@@ -18,7 +27,12 @@
 // of #mixed-content in #comparison-output
 // Format it nicely so the differences are clear
 // Your code here:
-
+let compareButton = document.getElementById("compare-btn")
+compareButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    document.querySelector("#text-target").textContent = "";
+    document.querySelector("#comparison-output").innerHTML = document.querySelector("#mixed-content").innerHTML;
+});
 
 
 // ===== Part 3: Counter =====
@@ -29,8 +43,23 @@
 // - Clicking Reset should set it back to 0
 // Display the count in #counter-display
 // Your code here:
-
-
+let plusButton = document.getElementById("increment-btn");
+plusButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    let counterNum = Number(document.querySelector("#counter-display").textContent);
+    document.querySelector("#counter-display").textContent = counterNum+1;
+});
+let minusButton = document.getElementById("decrement-btn");
+minusButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    let counterNum = Number(document.querySelector("#counter-display").textContent);
+    document.querySelector("#counter-display").textContent = counterNum-1;
+});
+let resetButton = document.getElementById("reset-btn");
+resetButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    document.querySelector("#counter-display").textContent = 0;
+});
 
 // ===== Part 4: innerHTML =====
 

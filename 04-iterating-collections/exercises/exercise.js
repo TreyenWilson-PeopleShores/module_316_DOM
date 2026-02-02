@@ -59,17 +59,15 @@ for ([index, task] of tasks.entries()){
 }
 
 
-
+//DO EXERCISES INCLUDING 6
 // ===== Part 3: Converting and Using Array Methods =====
 
 // 6. Get all products, convert to array, and use map() to get an array of prices
 // Display the result using displayResult()
-// Your code here:
-let productArray = [];
-for (product of productNames){
-    console.log("Here:", product);
-}
-
+const prices = Array.from(productsNames).map(product =>
+    parseFloat(product.dataset.price)
+)
+displayResult('6', prices.join(', '));
 
 // 7. Use filter() to get only products that are on sale
 // Log the count of on-sale products

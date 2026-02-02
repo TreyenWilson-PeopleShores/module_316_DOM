@@ -6,7 +6,15 @@
 // 1. Create a DocumentFragment and add 10 list items (1-10) to #numbers-list
 // Use a for loop and add all items at once using the fragment
 // Your code here:
+let numbersList = document.getElementById('numbers-list');
+let fragment1 = document.createDocumentFragment();
 
+for (let i = 1; i<=10; i++){
+    let li = document.createElement("li");
+    li.textContent = `Item ${i}`;
+    fragment1.appendChild(li);
+}
+numbersList.appendChild(fragment1);
 
 // 2. Create a function that takes an array of strings and adds them
 // to a list element using a DocumentFragment

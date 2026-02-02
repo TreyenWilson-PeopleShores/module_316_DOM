@@ -5,15 +5,23 @@
 
 // 1. Create a paragraph element, set its text to "Hello, DOM!", and add it to #basic-output
 // Your code here:
+let p1 = document.createElement("p");
+p1.textContent = "<p>HI</p>"
+document.getElementById('basic-output').appendChild(p1);
 
-
-// 2. Create a div with the class "card", add some text, and append it to #basic-output
+// 2. Create a div with the class "card", add some text, and append it to #basic-output // Go through exercise 5 first - easier than 4
 // Your code here:
-
+let card1 = document.createElement("div");
+card1.classList.add('card');
+card1.textContent = "Div text card"
+document.getElementById('basic-output').appendChild(card1);
 
 // 3. Create an h3 element, set its text and color (red), and prepend it to #basic-output
 // Your code here:
-
+let h3E = document.createElement("h3");
+card1.style.color = "red";
+card1.textContent = "H3 Elememt";
+document.getElementById('basic-output').prependChild(h3E);
 
 // 4. Create a link (anchor) that goes to "https://example.com", has text "Visit Example",
 //    opens in a new tab, and append it to #basic-output

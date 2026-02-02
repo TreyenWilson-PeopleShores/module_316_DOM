@@ -6,6 +6,16 @@
 // 1. When "Change Color" is clicked, change #style-box background to a random color
 // Hint: Generate a random hex color
 // Your code here:
+function randomNum(){
+    return Math.floor(Math.random()*256);
+
+}
+let changeColorButton = document.getElementById("change-color-btn");
+changeColorButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    document.querySelector("#style-box").style.backgroundColor = rgb(randomNum(), randomNum(), randomNum());
+});
+
 
 
 // 2. When "Change Size" is clicked, increase the box size by 20px (both width and height)
