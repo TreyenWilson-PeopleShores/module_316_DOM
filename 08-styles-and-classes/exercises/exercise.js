@@ -13,7 +13,7 @@ function randomNum(){
 let changeColorButton = document.getElementById("change-color-btn");
 changeColorButton.addEventListener("click", function(event) {
     //console.log("Clicked");
-    document.querySelector("#style-box").style.backgroundColor = rgb(randomNum(), randomNum(), randomNum());
+    document.querySelector("#style-box").style.backgroundColor = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`;
 });
 
 
