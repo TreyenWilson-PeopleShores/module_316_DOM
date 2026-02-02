@@ -66,11 +66,21 @@ resetButton.addEventListener("click", function(event) {
 // 5. When "Replace with HTML" is clicked, replace #html-container's content
 // with a heading and a paragraph
 // Your code here:
-
+let replaceHtmlButton = document.getElementById("replace-html-btn");
+replaceHtmlButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    document.querySelector("#html-container").innerHTML = "<h1>Heading</h1><p>paragraph</p>";
+});
 
 // 6. When "Add a List" is clicked, add an unordered list with 3 items
 // to #html-container (without removing existing content)
 // Your code here:
+let addListButton = document.getElementById("add-list-btn");
+addListButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    let content = document.querySelector("#html-container").innerHTML
+    document.querySelector("#html-container").innerHTML = content+"<ol>here</ol>";
+});
 
 
 
@@ -80,7 +90,15 @@ resetButton.addEventListener("click", function(event) {
 // Make sure to use textContent (not innerHTML) for safety
 // If the input is empty, show "Your message will appear here"
 // Your code here:
-
+let userInput = document.getElementById("user-input");
+userInput.addEventListener("input", function(event) {
+    //console.log("Clicked");
+    let content = userInput.value;
+    document.querySelector("#input-display").textContent = content;
+    if(content === ""){
+        document.querySelector("#input-display").textContent = "Your message will appear here";    
+    }
+});
 
 
 // ===== Part 6: Quote Rotator =====
@@ -97,7 +115,18 @@ const quotes = [
 // When "Next Quote" is clicked, display the next quote
 // Update both #quote-text and #quote-author
 // Your code here:
-
+let nextQuoteButton = document.getElementById("next-quote-btn");
+let counter = -1;
+nextQuoteButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    counter++;
+    document.querySelector("#quote-text").innerHTML = quotes[counter].text;
+    document.querySelector("#quote-author").innerHTML = quotes[counter].author;
+    if (counter>quotes.length-2){
+        counter=-1;
+    }
+    
+});
 
 
 // ===== Part 7: Live Preview =====
@@ -105,7 +134,21 @@ const quotes = [
 // 9. As the user types in #preview-input, show the content in #live-preview
 // Convert newlines to <br> tags
 // Your code here:
-
+let previewInput = document.getElementById("preview-input");
+previewInput.addEventListener("input", function(event) {
+    //console.log("Clicked");
+    let content = previewInput.value;
+    
+    //document.querySelector("#live-preview").innerHTML = content;
+    previewInput.addEventListener("keydown", function(event){
+        if(event.key==="Enter"){
+            content = content+"<br>";
+            console.log(content)
+        }
+    })
+    document.querySelector("#live-preview").innerHTML = content;
+   
+});
 
 
 // ===== Part 8: Word Counter =====
