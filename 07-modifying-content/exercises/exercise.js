@@ -149,7 +149,7 @@ previewInput.addEventListener("input", function(event) {
     document.querySelector("#live-preview").innerHTML = content;
    
 });
-
+ 
 
 // ===== Part 8: Word Counter =====
 
