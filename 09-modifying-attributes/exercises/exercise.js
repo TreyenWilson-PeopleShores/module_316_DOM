@@ -9,7 +9,11 @@ const linkInfo = document.getElementById('link-info');
 // 1. When "Show Attributes" is clicked, display the href, target, and title 
 // of #test-link in #link-info
 // Your code here:
-
+let showAttributesButton = document.getElementById("show-attrs-btn");
+showAttributesButton.addEventListener("click", function(event) {
+    //console.log("Clicked");
+    displayResult(document.querySelector("#test-link > [href]"))
+});
 
 // 2. When "Change URL" is clicked, change the href to "https://google.com"
 // and update the title attribute too
